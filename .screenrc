@@ -1,36 +1,32 @@
-# Use bash
-shell /bin/bash
+#every window a login shell
+shell -$SHELL
 
 escape ^aa
 escape ``
-autodetach on
-
-# Big scrollback
 defscrollback 10000
+termcapinfo xterm* ti@:te@
 
-#bind o other
-#bind / other
+bind o other
+bind / other
 
-#bind -k k5 prev
-#bind -k k6 next
+bindkey -k k5 prev
+bindkey -k k6 next
 
-# No annoying startup message
-startup_message off
-
-# Display the status line at the bottom
-hardstatus on
+bindkey -m "^[[5;2~" stuff ^b
+bindkey -m "^[[6;2~" stuff ^f
 hardstatus alwayslastline
-hardstatus string "%{= KG}[ %{G}%H %{g}][%= %{=KW}%?%-Lw%?%{r}(%{W}%n*%f%t%? (%u)%?%{r})%{w}%?%+Lw%?%=%{G}][%{B}%Y-%m-%d%{W}%c %{g}]"
+hardstatus string '%{= KG}[ %{G}%H %{g}][%= %{=KW}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%=%{G}][%{B}%Y-%m-%d%{W}%c %{g}]'
 
-# Setup screens
-#chdir /home/vagrant/Sites # All screens start in ~/Sites folder
-screen -t bash 0 bash
-screen -t bash 1 bash
-screen -t bash 2 bash
-screen -t bash 3 bash
-screen -t bash 4 bash
-screen -t bash 5 bash
-screen -t bash 6 bash
-screen -t bash 7 bash
-screen -t bash 8 bash
-screen -t bash 9 bash
+screen -t screen 0 bash --init-file ~/.bashrc
+screen -t screen 1 bash --init-file ~/.bashrc
+screen -t screen 2 bash --init-file ~/.bashrc
+screen -t screen 3 bash --init-file ~/.bashrc
+screen -t screen 4 bash --init-file ~/.bashrc
+screen -t screen 5 bash --init-file ~/.bashrc
+screen -t screen 6 bash --init-file ~/.bashrc
+screen -t screen 7 bash --init-file ~/.bashrc
+screen -t screen 8 bash --init-file ~/.bashrc
+screen -t screen 9 bash --init-file ~/.bashrc
+
+vbell off
+
