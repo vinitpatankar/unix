@@ -1,0 +1,36 @@
+# Use bash
+shell /bin/bash
+
+escape ^aa
+escape ``
+autodetach on
+
+# Big scrollback
+defscrollback 10000
+
+#bind o other
+#bind / other
+
+#bind -k k5 prev
+#bind -k k6 next
+
+# No annoying startup message
+startup_message off
+
+# Display the status line at the bottom
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{= KG}[ %{G}%H %{g}][%= %{=KW}%?%-Lw%?%{r}(%{W}%n*%f%t%? (%u)%?%{r})%{w}%?%+Lw%?%=%{G}][%{B}%Y-%m-%d%{W}%c %{g}]"
+
+# Setup screens
+#chdir /home/vagrant/Sites # All screens start in ~/Sites folder
+screen -t bash 0 bash
+screen -t bash 1 bash
+screen -t bash 2 bash
+screen -t bash 3 bash
+screen -t bash 4 bash
+screen -t bash 5 bash
+screen -t bash 6 bash
+screen -t bash 7 bash
+screen -t bash 8 bash
+screen -t bash 9 bash
